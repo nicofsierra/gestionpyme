@@ -1,4 +1,4 @@
-/*package ar.com.gestionPyme.modelo;
+package ar.com.gestionpyme.modelo;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -11,17 +11,17 @@ public class Empleado extends Usuario{
 	
 	private Integer legajo;
 	@ManyToOne
-	@JoinColumn(name="idEmpleado")
-	private Long idEmpleado;
+	@JoinColumn(name="idAdm")
+	private Administrador idAdm;
 	
 	public Empleado(){
 		super();
 	}
 
-	public Empleado(Integer legajo, Long idEmpleado) {
+	public Empleado(Integer legajo, Administrador idAdm) {
 		super();
 		this.legajo = legajo;
-		this.idEmpleado = idEmpleado;
+		this.idAdm = idAdm;
 	}
 
 	public Integer getLegajo() {
@@ -32,12 +32,12 @@ public class Empleado extends Usuario{
 		this.legajo = legajo;
 	}
 
-	public Long getIdEmpleado() {
-		return idEmpleado;
+	public Administrador getIdAdm() {
+		return idAdm;
 	}
 
-	public void setIdEmpleado(Long idEmpleado) {
-		this.idEmpleado = idEmpleado;
+	public void setIdAdm(Administrador idAdm) {
+		this.idAdm = idAdm;
 	}
 	
-}*/
+}

@@ -1,4 +1,4 @@
-/*package ar.com.gestionPyme.modelo;
+package ar.com.gestionpyme.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 public class Administrador extends Usuario{
 	
 	private Boolean externo;
-	@OneToMany(mappedBy="idEmpleado")
+	@OneToMany(mappedBy="idAdm")
 	private List<Empleado> empleado = new ArrayList<>();
 	
 	public Administrador(){
@@ -42,4 +42,4 @@ public class Administrador extends Usuario{
 	}
 
 	
-}*/
+}

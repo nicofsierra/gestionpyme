@@ -11,9 +11,10 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Bienvenido</div>
 			<div class="panel-body">
-				<p> Vista Empleado </p>
+				<p> Vista Administrador </p>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
+

@@ -20,7 +20,7 @@
 <link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <!-- Estilo -->
-<link href="css/estilos.css" rel="stylesheet">
+<!-- <link href="css/estilos.css" rel="stylesheet"> -->
 <!-- Titulo -->
-<link rel='icon' href='img/logo.jpg' type='image/x-icon'>
+<link rel='icon' href='img/logo.png' type='image/x-icon'>
 <title>AutoRent</title>
