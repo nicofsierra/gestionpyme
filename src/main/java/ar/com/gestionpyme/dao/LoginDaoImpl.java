@@ -28,7 +28,7 @@ public class LoginDaoImpl implements LoginDao{
 	public Boolean validarAdministrador(Long idUsuario){
 		final Session session = sessionFactory.getCurrentSession();
 		Administrador administrador = (Administrador) session.createCriteria(Administrador.class)
-									  .add(Restrictions.eq("idUsuario",idUsuario));
+									  .add(Restrictions.eq("idUsuario",idUsuario)).uniqueResult();
 		if (administrador!=null)
 			return true;
 		else

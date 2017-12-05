@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,7 +33,7 @@ public class ControladorLogin {
 	public ModelAndView validarLogin(@RequestParam("email") String email,
 									 @RequestParam("pwd") String pwd , HttpServletRequest request){
 		ModelMap modelo = new ModelMap();
-		Usuario usuario = servicioLogin.validarLogin(email, pwd);
+		Usuario usuario = servicioLogin.buscarUsuario(email, pwd);
 		if( usuario != null ){
 			request.getSession().setAttribute("usuario", usuario);
 			if(servicioLogin.validarAdministrador(usuario.getIdUsuario())){

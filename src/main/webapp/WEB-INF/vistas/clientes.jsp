@@ -6,12 +6,25 @@
 				style="display: inline;" alt="Logo" width="80" height="80">
 			<h1 class="margin" style="display: inline;">Gestion PyME</h1>
 		</div>
+		<nav class="navbar navbar-inverse bg-primary">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">GestionPyME</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="principal">Inicio</a></li>
+					<li class="active"><a href="#">Clientes</a></li>
+					<li><a href="#">Facturas</a></li>
+					<li><a href="#">Salir</a></li>
+				</ul>
+			</div>
+		</nav>
 	</header>
 	<div class="panel-group">
 		<div class="panel panel-default">
-			<div class="panel-heading">Ingreso de Usuario</div>
+			<div class="panel-heading">Clientes</div>
 			<div class="panel-body">
-				<form class="form-horizontal" action="login" method="POST">
+				<form class="form-horizontal" action="carga-clientes" method="POST">
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="email">Email:</label>
 						<div class="col-sm-4">
@@ -34,7 +47,8 @@
 					<div class="form-group">
 						<div class="col-sm-6">
 							<c:if test="${not empty error}">
-								<div style="margin-left:35%;" class="alert alert-danger alert-dismissable">
+								<div style="margin-left: 35%;"
+									class="alert alert-danger alert-dismissable">
 									<a href="#" class="close" data-dismiss="alert"
 										aria-label="close">&times;</a> <strong>${error}!</strong>
 								</div>

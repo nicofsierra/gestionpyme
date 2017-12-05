@@ -10,22 +10,21 @@ import ar.com.gestionpyme.modelo.Usuario;
 
 @Service("servicioLogin")
 @Transactional
-public class ServicioLoginImpl implements ServicioLogin{
-	
+public class ServicioLoginImpl implements ServicioLogin {
+
 	@Inject
 	private LoginDao loginDao;
-	
+
 	@Override
-	public Usuario validarLogin(String email,String password){
-		
+	public Usuario buscarUsuario(String email, String password) {
+
 		return loginDao.buscarUsuario(email, password);
 	}
-	
+
 	@Override
-	public Boolean validarAdministrador(Long idUsuario){
+	public Boolean validarAdministrador(Long idUsuario) {
 		
+		return loginDao.validarAdministrador(idUsuario);
 	}
-	
-	
 
 }

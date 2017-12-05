@@ -14,15 +14,19 @@ public class Administrador extends Usuario{
 	private Boolean externo;
 	@OneToMany(mappedBy="idAdm")
 	private List<Empleado> empleado = new ArrayList<>();
+
+	@OneToMany(mappedBy="administrador")
+	private List<Producto> producto = new ArrayList<>();
 	
 	public Administrador(){
 		super();
 	}
-
-	public Administrador(Boolean externo, List<Empleado> empleado) {
+	
+	public Administrador(Boolean externo, List<Empleado> empleado, List<Producto> producto) {
 		super();
 		this.externo = externo;
 		this.empleado = empleado;
+		this.producto = producto;
 	}
 
 	public Boolean getExterno() {
@@ -41,5 +45,12 @@ public class Administrador extends Usuario{
 		this.empleado = empleado;
 	}
 
+	public List<Producto> getProducto() {
+		return producto;
+	}
+
+	public void setProducto(List<Producto> producto) {
+		this.producto = producto;
+	}
 	
 }
