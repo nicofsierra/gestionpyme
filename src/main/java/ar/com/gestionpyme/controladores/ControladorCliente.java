@@ -39,4 +39,9 @@ public class ControladorCliente {
 		}
 	}
 	
+	@RequestMapping("/principal")
+	public ModelAndView irAPrincipal(){
+		return new ModelAndView("redirect:/principal");
+	}
+	
 }

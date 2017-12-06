@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import ar.com.gestionpyme.modelo.Cliente;
 
 @Service("clienteDao")
-public class ClienteDaoImpl {
+public class ClienteDaoImpl implements ClienteDao{
 	
 	@Inject
 	private SessionFactory sessionFactory;
 	
-	//@Override
+	@Override
 	public Boolean guardarCliente(Cliente cliente){
 		final Session session = sessionFactory.getCurrentSession();
 		//session.save(cliente);

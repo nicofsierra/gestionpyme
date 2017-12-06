@@ -11,6 +11,7 @@ import ar.com.gestionpyme.modelo.Cliente;
 @Service("servicioCliente")
 @Transactional
 public class ServicioClienteImpl implements ServicioCliente{
+	
 	@Inject 
 	private ClienteDao clienteDao;
 	

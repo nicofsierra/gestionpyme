@@ -6,17 +6,27 @@
 				style="display: inline;" alt="Logo" width="80" height="80">
 			<h1 class="margin" style="display: inline;">Gestion PyME</h1>
 		</div>
-		<nav class="navbar navbar-inverse bg-primary">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">GestionPyME</a>
+		<br>
+		<nav>
+			<div class="navbar navbar-default navbar-custom">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">GestionPyME</a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li><a href="principal">Inicio</a></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="clientes">Clientes<span
+								class="caret"></span></a></li>
+						<ul class="dropdown-menu">
+							<li class="active"><a href="#">Alta Clientes</a></li>
+							<li><a href="#">Modificar Clientes</a></li>
+							<li><a href="#">Baja Clientes</a></li>
+						</ul>
+						<li><a href="#">Facturas</a></li>
+						<li><a href="logout">Salir</a></li>
+					</ul>
 				</div>
-				<ul class="nav navbar-nav">
-					<li><a href="principal">Inicio</a></li>
-					<li class="active"><a href="#">Clientes</a></li>
-					<li><a href="#">Facturas</a></li>
-					<li><a href="#">Salir</a></li>
-				</ul>
 			</div>
 		</nav>
 	</header>
@@ -24,38 +34,48 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Clientes</div>
 			<div class="panel-body">
-				<form class="form-horizontal" action="guardar-clientes" method="POST">
+				<form:form class="form-horizontal" action="guardar-clientes" method="POST" modelAttribute="cliente">
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="email">Email:</label>
+						<label class="control-label col-sm-2" for="nombre">Nombre:</label>
 						<div class="col-sm-4">
-							<input type="email" class="form-control" id="email"
-								placeholder="Enter email" name="email">
+							<input type="text" class="form-control" id="nombre"
+								placeholder="Ingrese Nombre . . ." name="nombre" path="nombre">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="pwd">Password:</label>
+						<label class="control-label col-sm-2" for="cuit">CUIT:</label>
 						<div class="col-sm-4">
-							<input type="password" class="form-control" id="pwd"
-								placeholder="Enter password" name="pwd">
+							<input type="text" class="form-control" id="cuit"
+								placeholder="Cuit" name="cuit" path="cuit">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="pwd">CUIT:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="cuit"
+								placeholder="Cuit" name="cuit" path="cuit">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="pwd">CUIT:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="cuit"
+								placeholder="Cuit" name="cuit" path="cuit">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="pwd">CUIT:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="cuit"
+								placeholder="Cuit" name="cuit" path="cuit">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-default">Enviar</button>
+							<button type="submit" class="btn btn-default">Guardar</button>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-6">
-							<c:if test="${not empty error}">
-								<div style="margin-left: 35%;"
-									class="alert alert-danger alert-dismissable">
-									<a href="#" class="close" data-dismiss="alert"
-										aria-label="close">&times;</a> <strong>${error}!</strong>
-								</div>
-							</c:if>
-						</div>
-					</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
 	</div>

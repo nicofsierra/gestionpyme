@@ -19,7 +19,7 @@ public class Localidad {
 	private String descripcion;
 	
 	@OneToMany(mappedBy="localidad")
-	private List<Direccion> direccion = new ArrayList<>();
+	private List<RelacionCalleAlturaLocalidad> relacionCalleAlturaLocalidad = new ArrayList<>();
 	
 	@ManyToOne
 	@JoinColumn(name="partido")
@@ -27,11 +27,11 @@ public class Localidad {
 	
 	public Localidad(){}
 
-	public Localidad(Long idLocalidad, String descripcion, List<Direccion> direccion, Partido partido) {
+	public Localidad(Long idLocalidad, String descripcion, List<RelacionCalleAlturaLocalidad> relacionCalleAlturaLocalidad, Partido partido) {
 		super();
 		this.idLocalidad = idLocalidad;
 		this.descripcion = descripcion;
-		this.direccion = direccion;
+		this.relacionCalleAlturaLocalidad = relacionCalleAlturaLocalidad;
 		this.partido = partido;
 	}
 
@@ -51,12 +51,12 @@ public class Localidad {
 		this.descripcion = descripcion;
 	}
 
-	public List<Direccion> getDireccion() {
-		return direccion;
+	public List<RelacionCalleAlturaLocalidad> getrelacionCalleAlturaLocalidad() {
+		return relacionCalleAlturaLocalidad;
 	}
 
-	public void setDireccion(List<Direccion> direccion) {
-		this.direccion = direccion;
+	public void setrelacionCalleAlturaLocalidad(List<RelacionCalleAlturaLocalidad> relacionCalleAlturaLocalidad) {
+		this.relacionCalleAlturaLocalidad = relacionCalleAlturaLocalidad;
 	}
 
 	public Partido getPartido() {

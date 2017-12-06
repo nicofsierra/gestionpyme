@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -13,8 +12,6 @@ public class Direccion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idDireccion;
-	private String calle;
-	private Integer numero;
 	private Integer piso;
 	private Integer dpto;
 	private String entreCalle1;
@@ -23,24 +20,22 @@ public class Direccion {
 	@OneToOne(mappedBy="direccion")
 	private Cliente cliente;
 	
-	@ManyToOne
-	@JoinColumn(name="localidad")
-	private Localidad localidad;
+	@OneToOne
+	@JoinColumn(name="calleAltura")
+	private CalleAltura calleAltura;
 	
 	public Direccion(){}
 
-	public Direccion(Long idDireccion, String calle, Integer numero, Integer piso, Integer dpto, String entreCalle1,
-			String entreCalle2, Cliente cliente, Localidad localidad) {
+	public Direccion(Long idDireccion, Integer piso, Integer dpto, String entreCalle1,
+			String entreCalle2, Cliente cliente, CalleAltura calleAltura) {
 		super();
 		this.idDireccion = idDireccion;
-		this.calle = calle;
-		this.numero = numero;
 		this.piso = piso;
 		this.dpto = dpto;
 		this.entreCalle1 = entreCalle1;
 		this.entreCalle2 = entreCalle2;
 		this.cliente = cliente;
-		this.localidad = localidad;
+		this.calleAltura = calleAltura;
 	}
 
 	public Long getIdDireccion() {
@@ -49,22 +44,6 @@ public class Direccion {
 
 	public void setIdDireccion(Long idDireccion) {
 		this.idDireccion = idDireccion;
-	}
-
-	public String getCalle() {
-		return calle;
-	}
-
-	public void setCalle(String calle) {
-		this.calle = calle;
-	}
-
-	public Integer getNumero() {
-		return numero;
-	}
-
-	public void setNumero(Integer numero) {
-		this.numero = numero;
 	}
 
 	public Integer getPiso() {
@@ -107,12 +86,12 @@ public class Direccion {
 		this.cliente = cliente;
 	}
 
-	public Localidad getLocalidad() {
-		return localidad;
+	public CalleAltura getcalleAltura() {
+		return calleAltura;
 	}
 
-	public void setLocalidad(Localidad localidad) {
-		this.localidad = localidad;
+	public void setcalleAltura(CalleAltura calleAltura) {
+		this.calleAltura = calleAltura;
 	}
 	
 }
