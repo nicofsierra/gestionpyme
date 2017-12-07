@@ -34,33 +34,37 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Clientes</div>
 			<div class="panel-body">
-				<form:form class="form-horizontal" action="guardar-clientes" method="POST" modelAttribute="cliente">
+				<form:form class="form-horizontal" action="guardar-clientes"
+					method="POST" modelAttribute="cliente">
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="nombre">Nombre:</label>
 						<div class="col-sm-4">
 							<input type="text" class="form-control" id="nombre"
 								placeholder="Ingrese Nombre . . ." name="nombre" path="nombre">
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="cuit">CUIT:</label>
+						<label class="control-label col-sm-1 for="cuit">CUIT:</label>
 						<div class="col-sm-4">
 							<input type="text" class="form-control" id="cuit"
 								placeholder="Cuit" name="cuit" path="cuit">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="pwd">CUIT:</label>
+						<label class="control-label col-sm-2" for="telefono">Telefono:</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="cuit"
-								placeholder="Cuit" name="cuit" path="cuit">
+							<input type="text" class="form-control" id="telefono"
+								placeholder="Telefono" name="telefono" path="telefono">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="pwd">CUIT:</label>
+						<label class="control-label col-sm-2" for="situacion">Situacion
+							en Afip:</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="cuit"
-								placeholder="Cuit" name="cuit" path="cuit">
+							<select class="form-control" id="situacion" name="situacion">
+								<c:forEach items="${situacion}" var="situacion_afip">
+									<option value="${situacion_afip.idSituacion}"><c:out
+											value="${situacion_afip.descripcion}" /></option>
+								</c:forEach>
+							</select>
 						</div>
 					</div>
 					<div class="form-group">

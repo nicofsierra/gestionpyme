@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 public class Pais {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idProvincia;
+	private Long idPais;
 	private String descripcion;
 	
 	@OneToMany(mappedBy="pais")
@@ -20,19 +20,19 @@ public class Pais {
 	
 	public Pais(){}
 
-	public Pais(Long idProvincia, String descripcion, List<Provincia> provincia) {
+	public Pais(Long idPais, String descripcion, List<Provincia> provincia) {
 		super();
-		this.idProvincia = idProvincia;
+		this.idPais = idPais;
 		this.descripcion = descripcion;
 		this.provincia = provincia;
 	}
 
-	public Long getIdProvincia() {
-		return idProvincia;
+	public Long getIdPais() {
+		return idPais;
 	}
 
 	public void setIdProvincia(Long idProvincia) {
-		this.idProvincia = idProvincia;
+		this.idPais = idProvincia;
 	}
 
 	public String getDescripcion() {

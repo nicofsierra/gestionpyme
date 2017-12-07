@@ -17,16 +17,16 @@ public class Calle {
 	private String descripcion;
 	
 	@OneToMany(mappedBy="calle")
-	private List<CalleAltura> calleAltura = new ArrayList<>();
+	private List<Direccion> direccion = new ArrayList<>();
 	
 	public Calle(){
 	}
 
-	public Calle(Long idCalle, String descripcion, List<CalleAltura> calleAltura) {
+	public Calle(Long idCalle, String descripcion, List<Direccion> direccion) {
 		super();
 		this.idCalle = idCalle;
 		this.descripcion = descripcion;
-		this.calleAltura = calleAltura;
+		this.direccion = direccion;
 	}
 
 	public Long getIdCalle() {
@@ -45,12 +45,12 @@ public class Calle {
 		this.descripcion = descripcion;
 	}
 
-	public List<CalleAltura> getCalleAltura() {
-		return calleAltura;
+	public List<Direccion> getdireccion() {
+		return direccion;
 	}
 
-	public void setCalleAltura(List<CalleAltura> calleAltura) {
-		this.calleAltura = calleAltura;
+	public void setdireccion(List<Direccion> direccion) {
+		this.direccion = direccion;
 	}
 	
 }

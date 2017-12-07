@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -14,20 +15,26 @@ public class Direccion {
 	private Long idDireccion;
 	private Integer piso;
 	private Integer dpto;
+	private Integer altura;
 	private String entreCalle1;
 	private String entreCalle2;
+	private String cp;
 	
 	@OneToOne(mappedBy="direccion")
 	private Cliente cliente;
 	
 	@OneToOne
-	@JoinColumn(name="calleAltura")
-	private CalleAltura calleAltura;
+	@JoinColumn(name="calle")
+	private Calle calle;
+	
+	@ManyToOne
+	@JoinColumn(name="localidad")
+	private Localidad localidad;
 	
 	public Direccion(){}
 
 	public Direccion(Long idDireccion, Integer piso, Integer dpto, String entreCalle1,
-			String entreCalle2, Cliente cliente, CalleAltura calleAltura) {
+			String entreCalle2, Cliente cliente, Calle calle , String cp , Integer altura) {
 		super();
 		this.idDireccion = idDireccion;
 		this.piso = piso;
@@ -35,7 +42,9 @@ public class Direccion {
 		this.entreCalle1 = entreCalle1;
 		this.entreCalle2 = entreCalle2;
 		this.cliente = cliente;
-		this.calleAltura = calleAltura;
+		this.calle = calle;
+		this.cp = cp;
+		this.altura = altura;
 	}
 
 	public Long getIdDireccion() {
@@ -86,12 +95,28 @@ public class Direccion {
 		this.cliente = cliente;
 	}
 
-	public CalleAltura getcalleAltura() {
-		return calleAltura;
+	public Calle getcalle() {
+		return calle;
 	}
 
-	public void setcalleAltura(CalleAltura calleAltura) {
-		this.calleAltura = calleAltura;
+	public void setcalle(Calle calle) {
+		this.calle = calle;
+	}
+
+	public String getCp() {
+		return cp;
+	}
+
+	public void setCp(String cp) {
+		this.cp = cp;
+	}
+
+	public Integer getAltura() {
+		return altura;
+	}
+
+	public void setAltura(Integer altura) {
+		this.altura = altura;
 	}
 	
 }
