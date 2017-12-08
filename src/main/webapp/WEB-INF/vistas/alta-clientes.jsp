@@ -54,15 +54,37 @@
 							<input type="text" class="form-control" id="telefono"
 								placeholder="Telefono" name="telefono" path="telefono">
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="situacion">Situacion
-							en Afip:</label>
+						<label class="control-label col-sm-1" for="situacion">Afip:</label>
 						<div class="col-sm-4">
 							<select class="form-control" id="situacion" name="situacion">
 								<c:forEach items="${situacion}" var="situacion_afip">
 									<option value="${situacion_afip.idSituacion}"><c:out
 											value="${situacion_afip.descripcion}" /></option>
+								</c:forEach>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="calle">Calle:</label>
+						<div class="col-sm-2">
+							<select class="form-control" id="calle" name="calle">
+								<c:forEach items="${calle}" var="calles">
+									<option value="${calles.idCalle}"><c:out
+											value="${calles.descripcion}" /></option>
+								</c:forEach>
+							</select>
+						</div>
+						<label class="control-label col-sm-1" for="altura">Altura:</label>
+						<div class="col-sm-1">
+							<input type="text" class="form-control" id="altura"
+								placeholder="Altura" name="altura" path="altura">
+						</div>
+						<label class="control-label col-sm-1" for="pwd">Localidad:</label>
+						<div class="col-sm-3">
+							<select class="form-control" id="localidad" name="localidad">
+								<c:forEach items="${localidad}" var="localidades">
+									<option value="${localidades.idLocalidad}"><c:out
+											value="${localidades.descripcion}" /></option>
 								</c:forEach>
 							</select>
 						</div>

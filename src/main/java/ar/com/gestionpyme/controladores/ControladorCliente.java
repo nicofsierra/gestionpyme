@@ -42,7 +42,7 @@ public class ControladorCliente {
 	}
 	
 
-	@RequestMapping(path="/guarda-clientes",method=RequestMethod.POST)
+	@RequestMapping(path="/guardar-clientes",method=RequestMethod.POST)
 	public ModelAndView guardarClientes(@ModelAttribute("cliente") Cliente cliente){
 		ModelMap modelo = new ModelMap();
 		if(servicioCliente.guardarCliente(cliente)){
