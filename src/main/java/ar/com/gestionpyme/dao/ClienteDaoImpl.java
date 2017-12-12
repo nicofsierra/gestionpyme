@@ -17,8 +17,8 @@ public class ClienteDaoImpl implements ClienteDao{
 	@Override
 	public Boolean guardarCliente(Cliente cliente){
 		final Session session = sessionFactory.getCurrentSession();
-		//session.save(cliente);
-		System.out.println(session.save(cliente).getClass().getName());
+		session.save(cliente);
+		//System.out.println(session.save(cliente).getClass().getName());
 		return true;
 	}
 
