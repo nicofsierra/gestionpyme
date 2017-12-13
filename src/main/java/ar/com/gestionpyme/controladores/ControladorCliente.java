@@ -47,7 +47,7 @@ public class ControladorCliente {
 	public ModelAndView guardarClientes(@ModelAttribute("cliente") Cliente cliente,
 										HttpServletResponse response,
 										HttpServletRequest request){
-		ModelMap modelo = new ModelMap();
+		ModelMap modelo = new ModelMap(); 
 		request.getSession().setAttribute("usuario", request.getSession().getAttribute("usuario"));
 		if(servicioCliente.guardarCliente(cliente)){
 			modelo.put("mensaje", "Cliente Guardado con Exito");

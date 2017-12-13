@@ -4,7 +4,7 @@
 	<c:if test="${empty usuario}">
 		<c:redirect url="index" />
 	</c:if>
-	<c:if test="${empty empleado.nombre}">
+	<c:if test="${usuario.administrador}">
 		<c:redirect url="index" />
 	</c:if>
 	<header class='page-header'>

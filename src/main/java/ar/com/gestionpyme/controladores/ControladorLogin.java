@@ -36,12 +36,13 @@ public class ControladorLogin {
 		Usuario usuario = servicioLogin.buscarUsuario(email, pwd);
 		if( usuario != null ){
 			request.getSession().setAttribute("usuario", usuario);
-			if(servicioLogin.validarAdministrador(usuario.getIdUsuario())){
-				modelo.put("administrador",usuario);
+			modelo.put("usuario",usuario);
+			if(usuario.getAdministrador()){
+				
 				return new ModelAndView("administrar",modelo);
 			}
 			else{
-				modelo.put("empleado",usuario);
+				
 				return new ModelAndView("principal",modelo);
 				}
 			}

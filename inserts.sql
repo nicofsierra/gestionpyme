@@ -1,8 +1,8 @@
 -- create database gestionpyme;
 use gestionpyme;
 
-INSERT INTO usuario (email,nombre,password) values("a@mail.com","Nicolas","1234"),
-						  ("b@mail.com","Juan","1234");
+INSERT INTO usuario (email,nombre,password,administrador) values("a@mail.com","Nicolas","1234",false),
+						  ("b@mail.com","Juan","1234",true);
 						
 INSERT INTO administrador values(false,2);
 

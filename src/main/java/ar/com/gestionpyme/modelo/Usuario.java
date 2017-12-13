@@ -17,17 +17,19 @@ public class Usuario {
 	private String nombre;
 	private String email;
 	private String password;
+	private Boolean administrador;
 	
 	public Usuario() {
 	
 	}
 
-	public Usuario(Long idUsuario, String nombre, String email, String password) {
+	public Usuario(Long idUsuario, String nombre, String email, String password, Boolean administrador) {
 		super();
 		this.idUsuario = idUsuario;
 		this.nombre = nombre;
 		this.email = email;
 		this.password = password;
+		this.administrador = administrador;
 	}
 
 	public Long getIdUsuario() {
@@ -60,6 +62,14 @@ public class Usuario {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Boolean getAdministrador() {
+		return administrador;
+	}
+
+	public void setAdministrador(Boolean administrador) {
+		this.administrador = administrador;
 	}
 	
 }
